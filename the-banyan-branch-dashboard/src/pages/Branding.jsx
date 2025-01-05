@@ -11,6 +11,7 @@ import { brandingSelector } from "../redux/selector/selectors";
 import { openNotificationWithIcon } from "../helper";
 
 const Branding = () => {
+  const isMobile = window.screen.width < 768;
   const [form] = Form.useForm();
   const dispatch = useDispatch();
   const {
@@ -102,7 +103,7 @@ const Branding = () => {
       >
         <Form name="brandTheme" onFinish={handleSubmit} form={form}>
           <Flex vertical>
-            <Flex className="w-full flex-grow" gap={24}>
+            <Flex className="w-full flex-grow" gap={24} vertical={isMobile}>
               <Form.Item
                 rules={[
                   { required: true, message: "Please select a primary color" },
@@ -143,7 +144,7 @@ const Branding = () => {
                 </Card>
               </Form.Item>
             </Flex>
-            <Flex className="w-full flex-grow" gap={24}>
+            <Flex className="w-full flex-grow" gap={24} vertical={isMobile}>
               <Form.Item
                 rules={[
                   { required: true, message: "Please select a tertiary color" },
