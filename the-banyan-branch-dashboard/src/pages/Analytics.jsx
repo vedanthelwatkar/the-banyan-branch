@@ -113,7 +113,7 @@ const Analytics = () => {
   };
 
   return (
-    <Layout className="min-h-screen bg-gray-100">
+    <Layout className="min-h-screen">
       <Content>
         <Title level={2} className="mb-6">
           Analytics
