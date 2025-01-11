@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getConstants } from "./redux/slice/BrandingSlice";
 import { brandingSelector } from "./redux/selector/selector";
 import { applyTheme } from "./helper/applyTheme";
+import { TabsConfig } from "./components/global/TabsConfig";
 
 function App() {
   const dispatch = useDispatch();
@@ -19,8 +20,8 @@ function App() {
   }, [brandingData]);
 
   return (
-    <div className="font-extrabold text-primary">
-      hello my name is vedant helwatkar im a nigga
+    <div>
+      <TabsConfig />
     </div>
   );
 }
