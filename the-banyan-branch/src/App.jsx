@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getConstants } from "./redux/slice/BrandingSlice";
 import { brandingSelector } from "./redux/selector/selector";
 import { applyTheme } from "./helper/applyTheme";
-import { TabsConfig } from "./components/global/TabsConfig";
+import Home from "./Home";
 
 function App() {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getConstants());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (brandingData.brandTheme) {
@@ -20,8 +20,8 @@ function App() {
   }, [brandingData]);
 
   return (
-    <div>
-      <TabsConfig />
+    <div className="min-h-screen bg-tertiary text-textBase font-body">
+      <Home />
     </div>
   );
 }
