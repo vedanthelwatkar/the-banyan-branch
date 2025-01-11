@@ -14,7 +14,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useTheme } from "../components/ThemeContext/ThemeContext";
+import { useTheme } from "../components/ThemeContext";
 import { useDispatch } from "react-redux";
 import { resetAuth } from "../redux/slice/AuthSlice";
 

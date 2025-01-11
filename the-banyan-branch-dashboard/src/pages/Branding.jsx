@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Card, Flex, ColorPicker, Button, Form, notification } from "antd";
-import CardTitle from "../components/GlobalComponents/CardTitle";
-import {
-  getBranding,
-  resetUpdateBranding,
-  updateBranding,
-} from "../redux/slice/BrandingSlice";
+import CardTitle from "../components/CardTitle";
+import { getBranding, updateBranding } from "../redux/slice/BrandingSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { brandingSelector } from "../redux/selector/selectors";
 import { openNotificationWithIcon } from "../helper";
+import FontPicker from "../components/FontPicker";
 
 const Branding = () => {
   const isMobile = window.screen.width < 768;
@@ -25,6 +22,7 @@ const Branding = () => {
   const [secondaryColor, setSecondaryColor] = useState("");
   const [tertiaryColor, setTertiaryColor] = useState("");
   const [textBaseColor, setTextBaseColor] = useState("");
+  const [themeFont, setThemeFont] = useState("");
 
   const [api, contextHolder] = notification.useNotification({ maxCount: 1 });
 
@@ -51,6 +49,12 @@ const Branding = () => {
     }
   };
 
+  const handleFontChange = (font) => {
+    console.log("font: ", font);
+    form.setFieldValue("theme_font", font);
+    setThemeFont(font);
+  };
+
   useEffect(() => {
     dispatch(getBranding());
   }, [dispatch]);
@@ -62,12 +66,14 @@ const Branding = () => {
         secondary_color,
         tertiary_color,
         text_base_color,
+        theme_font,
       } = brandingData.brandTheme;
       form.setFieldsValue(brandingData.brandTheme);
       setPrimaryColor(primary_color);
       setSecondaryColor(secondary_color);
       setTertiaryColor(tertiary_color);
       setTextBaseColor(text_base_color);
+      setThemeFont(theme_font);
     }
   }, [brandingData, form]);
 
@@ -179,6 +185,17 @@ const Branding = () => {
                       handleColorChange(color, "text_base_color")
                     }
                   />
+                </Card>
+              </Form.Item>
+            </Flex>
+            <Flex className="w-full flex-grow" gap={24} vertical={isMobile}>
+              <Form.Item
+                rules={[{ required: true, message: "Please select a font" }]}
+                name="theme_font"
+                className="flex-1"
+              >
+                <Card hoverable type="inner" title="Font Family">
+                  <FontPicker value={themeFont} onChange={handleFontChange} />
                 </Card>
               </Form.Item>
             </Flex>

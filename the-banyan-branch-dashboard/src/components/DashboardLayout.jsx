@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Button, Flex, Layout, Typography } from "antd";
-import "../../style/dashboard.css";
-import SideBar from "../../pages/SideBar";
-import BanyanTree from "../../assets/BanyanTree";
+import "../style/dashboard.css";
+import SideBar from "../pages/SideBar";
+import BanyanTree from "../assets/BanyanTree";
 import { Outlet } from "react-router-dom";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { useTheme } from "../ThemeContext/ThemeContext";
+import { useTheme } from "./ThemeContext";
 
 const { Header, Sider, Content } = Layout;
 const { Title } = Typography;

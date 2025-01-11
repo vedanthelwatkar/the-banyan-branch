@@ -13,7 +13,7 @@ import {
   notification,
 } from "antd";
 import { UserOutlined, EditOutlined, SaveOutlined } from "@ant-design/icons";
-import CardTitle from "../components/GlobalComponents/CardTitle";
+import CardTitle from "../components/CardTitle";
 import { getProfile, updateProfile } from "../redux/slice/ProfileSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { profileSelector } from "../redux/selector/selectors";

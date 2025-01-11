@@ -6,7 +6,7 @@ import {
   EditOutlined,
 } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
-import { useTheme } from "../components/ThemeContext/ThemeContext";
+import { useTheme } from "../components/ThemeContext";
 import { useNavigate } from "react-router-dom";
 import { resetUpdateProfile } from "../redux/slice/ProfileSlice";
 import { resetUpdateConfiguration } from "../redux/slice/ConfigurationSlice";

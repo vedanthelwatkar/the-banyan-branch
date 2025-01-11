@@ -2,7 +2,7 @@ import React from "react";
 import { Result, Button } from "antd";
 import { useNavigate } from "react-router-dom";
 import { BackwardFilled } from "@ant-design/icons";
-import { useTheme } from "../components/ThemeContext/ThemeContext";
+import { useTheme } from "../components/ThemeContext";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();

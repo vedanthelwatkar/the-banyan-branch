@@ -16,7 +16,7 @@ import {
   deleteConfiguration,
   updateConfiguration,
 } from "../redux/slice/ConfigurationSlice.js";
-import CardTitle from "../components/GlobalComponents/CardTitle.jsx";
+import CardTitle from "../components/CardTitle.jsx";
 import { configurationSelector } from "../redux/selector/selectors.js";
 import { openNotificationWithIcon } from "../helper/index.js";
 

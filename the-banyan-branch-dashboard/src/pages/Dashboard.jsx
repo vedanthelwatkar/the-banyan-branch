@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import DashboardLayout from "../components/DashboardLayout/DashboardLayout";
-import Login from "./Login";
+import DashboardLayout from "../components/DashboardLayout";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {

@@ -25,9 +25,7 @@ const AppRoutes = () => {
   const { data } = useSelector(getConstantsSelector);
 
   useEffect(() => {
-    const isDashboard = window.location.pathname.includes("/dashboard") ? 1 : 0;
-
-    dispatch(getConstants({ isDashboard }));
+    dispatch(getConstants({ isDashboard: 1 }));
   }, [dispatch]);
 
   useEffect(() => {
