@@ -6,7 +6,7 @@ export const getConstants = (req, res) => {
 
   connection.query("SELECT * FROM themes", (err, results) => {
     if (err) {
-      return res.status(500).json({ error: "Something went wrong" });
+      return res.status(500).json({ error: "Something went wrong", err });
     }
 
     const brandTheme = results ? results[0] : {};
