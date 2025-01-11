@@ -208,7 +208,7 @@ export default function Home() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-green-800 mb-1"
+                  className="block text-sm font-medium text-primary mb-1"
                 >
                   Your Name
                 </label>
@@ -216,14 +216,14 @@ export default function Home() {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full p-2 border border-green-300 rounded-md focus:ring-green-500 focus:border-green-500"
+                  className="w-full p-2 border border-primary rounded-md"
                   required
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-green-800 mb-1"
+                  className="block text-sm font-medium text-primary mb-1"
                 >
                   Your Email
                 </label>
@@ -231,14 +231,14 @@ export default function Home() {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full p-2 border border-green-300 rounded-md focus:ring-green-500 focus:border-green-500"
+                  className="w-full p-2 border border-primary rounded-md"
                   required
                 />
               </div>
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-sm font-medium text-green-800 mb-1"
+                  className="block text-sm font-medium text-primary mb-1"
                 >
                   Your Phone
                 </label>
@@ -246,14 +246,14 @@ export default function Home() {
                   type="tel"
                   id="phone"
                   name="phone"
-                  className="w-full p-2 border border-green-300 rounded-md focus:ring-green-500 focus:border-green-500"
+                  className="w-full p-2 border border-primary rounded-md"
                   required
                 />
               </div>
               <div>
                 <label
                   htmlFor="date"
-                  className="block text-sm font-medium text-green-800 mb-1"
+                  className="block text-sm font-medium text-primary mb-1"
                 >
                   Preferred Date
                 </label>
@@ -261,13 +261,13 @@ export default function Home() {
                   type="date"
                   id="date"
                   name="date"
-                  className="w-full p-2 border border-green-300 rounded-md focus:ring-green-500 focus:border-green-500"
+                  className="w-full p-2 border border-primary rounded-md"
                   required
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-green-600 text-white hover:bg-green-700 py-2 px-4 rounded-md transition-colors flex items-center justify-center"
+                className="w-full bg-primary text-white hover:bg-secondary py-2 px-4 rounded-md transition-colors flex items-center justify-center"
               >
                 Book Now
                 <Calendar className="ml-2 h-5 w-5" />
@@ -279,7 +279,7 @@ export default function Home() {
 
       <section ref={sectionRefs.contact} className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-center text-primary mb-8">
+          <h2 className="text-3xl  font-semibold text-center text-primary mb-8">
             Contact Us
           </h2>
           <div className="max-w-md mx-auto">
@@ -287,7 +287,7 @@ export default function Home() {
               Get in touch with us for any inquiries or to schedule a
               consultation.
             </p>
-            <div className="space-y-2 text-center">
+            <div className="my-2 text-center">
               <p className="text-primary">Email: contact@priyawellness.com</p>
               <p className="text-primary">Phone: (123) 456-7890</p>
               <p className="text-primary">
