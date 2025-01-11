@@ -6,10 +6,36 @@ export const getDetails = (req, res) => {
 
   connection.query(query, (err, result) => {
     if (err) {
-      return res.status(500).json({ error: "Something went wrong" });
+      return res.status(500).json({ error: "Something went wrong", err });
     }
 
     res.status(200).json({ table: page, result });
+  });
+};
+
+export const getAllDetails = (req, res) => {
+  const query = `
+    SELECT * FROM home;
+    SELECT * FROM about;
+    SELECT * FROM services;
+    SELECT * FROM book;
+    SELECT * FROM contact;
+  `;
+
+  connection.query(query, (err, result) => {
+    if (err) {
+      return res
+        .status(500)
+        .json({ error: "Something went wrong", details: err });
+    }
+
+    return res.status(200).json({
+      home: result[0],
+      about: result[1],
+      services: result[2],
+      book: result[3],
+      contact: result[4],
+    });
   });
 };
 

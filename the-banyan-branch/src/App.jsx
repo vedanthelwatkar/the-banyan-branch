@@ -4,6 +4,8 @@ import { getConstants } from "./redux/slice/BrandingSlice";
 import { brandingSelector } from "./redux/selector/selector";
 import { applyTheme } from "./helper/applyTheme";
 import Home from "./Home";
+import { getConfiguration } from "./redux/slice/ConfigurationSlice";
+import { getContacts } from "./redux/slice/ContactsSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -11,6 +13,8 @@ function App() {
 
   useEffect(() => {
     dispatch(getConstants());
+    dispatch(getConfiguration());
+    dispatch(getContacts());
   }, [dispatch]);
 
   useEffect(() => {

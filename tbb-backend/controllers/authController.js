@@ -17,7 +17,7 @@ export const signin = (req, res) => {
     async (err, results) => {
       if (err) {
         console.error("Signin error:", err);
-        return res.status(500).json({ message: "Internal server error" });
+        return res.status(500).json({ message: "Internal server error", err });
       }
 
       if (results.length === 0) {
@@ -52,7 +52,7 @@ export const signin = (req, res) => {
         });
       } catch (error) {
         console.error("Password comparison error:", error);
-        return res.status(500).json({ message: "Internal server error" });
+        return res.status(500).json({ message: "Internal server error", err });
       }
     }
   );
@@ -84,7 +84,7 @@ export const signup = (req, res) => {
     async (err, results) => {
       if (err) {
         console.error("Signup error:", err);
-        return res.status(500).json({ message: "Internal server error" });
+        return res.status(500).json({ message: "Internal server error", err });
       }
 
       if (results.length > 0) {
@@ -113,7 +113,9 @@ export const signup = (req, res) => {
                   .status(409)
                   .json({ message: "Username or email already exists" });
               }
-              return res.status(500).json({ message: "Internal server error" });
+              return res
+                .status(500)
+                .json({ message: "Internal server error", err });
             }
 
             connection.query(

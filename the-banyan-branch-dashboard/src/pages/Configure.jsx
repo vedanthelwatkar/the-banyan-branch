@@ -23,8 +23,10 @@ import { openNotificationWithIcon } from "../helper/index.js";
 const { TextArea } = Input;
 
 const options = [
-  { key: "about", value: "about", label: "About" },
   { key: "home", value: "home", label: "Home" },
+  { key: "about", value: "about", label: "About" },
+  { key: "services", value: "services", label: "Services" },
+  { key: "book", value: "book", label: "Book" },
   { key: "contact", value: "contact", label: "Contact" },
 ];
 

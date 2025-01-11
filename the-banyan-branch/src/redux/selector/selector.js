@@ -4,3 +4,13 @@ export const brandingSelector = createSelector(
   (state) => state,
   (state) => state.BrandingSlice
 );
+
+export const configurationSelector = createSelector(
+  (state) => state,
+  (state) => state.ConfigurationSlice
+);
+
+export const contactsSelector = createSelector(
+  (state) => state,
+  (state) => state.ContactsSlice
+);
