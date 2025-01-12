@@ -5,7 +5,7 @@ const Book = ({ sectionRefs }) => {
   return (
     <section ref={sectionRefs?.book} className="py-16 bg-tertiary">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center text-primary mb-8">
+        <h2 className="text-3xl md:text-4xl font-semibold text-center text-textBase mb-8">
           Book an Appointment
         </h2>
         <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
@@ -13,7 +13,7 @@ const Book = ({ sectionRefs }) => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-primary mb-1"
+                className="block text-sm font-medium text-textBase mb-1"
               >
                 Your Name
               </label>
@@ -28,7 +28,7 @@ const Book = ({ sectionRefs }) => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-primary mb-1"
+                className="block text-sm font-medium text-textBase mb-1"
               >
                 Your Email
               </label>
@@ -43,7 +43,7 @@ const Book = ({ sectionRefs }) => {
             <div>
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium text-primary mb-1"
+                className="block text-sm font-medium text-textBase mb-1"
               >
                 Your Phone
               </label>
@@ -58,7 +58,7 @@ const Book = ({ sectionRefs }) => {
             <div>
               <label
                 htmlFor="date"
-                className="block text-sm font-medium text-primary mb-1"
+                className="block text-sm font-medium text-textBase mb-1"
               >
                 Preferred Date
               </label>

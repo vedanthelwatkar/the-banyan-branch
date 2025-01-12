@@ -3,21 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary-color: #006b0e;
-  --secondary-color: #6fb11f;
-  --tertiary-color: #e1f1dc;
-  --info-color: #3451b2;
-  --warning-color: #d6a35c;
-  --error-color: #e5484d;
-  --text-base-color: #1d563e;
-  --success-color: #52c41a;
-  --white-color: #ffffff;
-  --theme-font: Poppins, sans-serif;
-}
+@layer base {
+  :root {
+    --primary-color: #006b0e;
+    --secondary-color: #6fb11f;
+    --tertiary-color: #e1f1dc;
+    --info-color: #3451b2;
+    --warning-color: #d6a35c;
+    --error-color: #e5484d;
+    --text-base-color: #1d563e;
+    --success-color: #52c41a;
+    --white-color: #ffffff;
+    --theme-font: Poppins, sans-serif;
+  }
 
-* {
-  font-family: var(--theme-font);
+  * {
+    font-family: var(--theme-font);
+  }
 }
 
 .no-visible-scrollbar {

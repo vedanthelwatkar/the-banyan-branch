@@ -74,7 +74,7 @@ export default function Home() {
             {["Home", "About", "Services", "Book", "Contact"].map((item) => (
               <li key={item}>
                 <button
-                  className={`text-primary rounded-md transition-colors ${
+                  className={`text-textBase rounded-md transition-colors ${
                     activeSection === item.toLowerCase().split(" ")[0]
                       ? "bg-tertiary font-semibold"
                       : "hover:bg-tertiary/50"
