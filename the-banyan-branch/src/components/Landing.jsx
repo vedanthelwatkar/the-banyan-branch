@@ -3,7 +3,6 @@ import { ArrowRight } from "lucide-react";
 import { useSelector } from "react-redux";
 import nature from "../assets/logo.png";
 import { configurationSelector } from "../redux/selector/selector";
-import SplitText from "./global/SplitText";
 const Landing = ({ sectionRefs, scrollToSection }) => {
   const { configurationData } = useSelector(configurationSelector);
 
@@ -31,20 +30,11 @@ const Landing = ({ sectionRefs, scrollToSection }) => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
           <div className="flex-1 space-y-6">
             <h1 className="font-semibold text-4xl md:text-5xl lg:text-6xl text-primary leading-tight">
-              <SplitText
-                text={
-                  configurationData?.home && configurationData?.home[0]?.title
-                }
-              />
+              {configurationData?.home && configurationData?.home[0]?.title}
             </h1>
             <p className="text-lg md:text-xl text-secondary">
-              <SplitText
-                delay={2}
-                text={
-                  configurationData?.home &&
-                  configurationData?.home[0]?.description
-                }
-              />
+              {configurationData?.home &&
+                configurationData?.home[0]?.description}
             </p>
             <button
               size="lg"

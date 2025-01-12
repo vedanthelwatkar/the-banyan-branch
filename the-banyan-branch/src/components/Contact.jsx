@@ -4,8 +4,6 @@ import {
   configurationSelector,
   contactsSelector,
 } from "../redux/selector/selector";
-import SplitText from "./global/SplitText";
-import BlurText from "./global/BlurText";
 
 const Contact = ({ sectionRefs }) => {
   const { contactsData } = useSelector(contactsSelector);
@@ -33,34 +31,18 @@ const Contact = ({ sectionRefs }) => {
     <section ref={sectionRefs?.contact} className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl  font-semibold text-center text-primary mb-8">
-          <SplitText
-            text={
-              configurationData?.contact && configurationData?.contact[0]?.title
-            }
-          />
+          {configurationData?.contact && configurationData?.contact[0]?.title}
         </h2>
         <div className="max-w-md mx-auto">
           <p className="text-center text-secondary mb-4">
-            <SplitText
-              text={
-                configurationData?.contact &&
-                configurationData?.contact[0]?.description
-              }
-            />
+            {configurationData?.contact &&
+              configurationData?.contact[0]?.description}
           </p>
           <div className="my-2 text-center">
-            <p className="text-primary">
-              <SplitText text={contactsData.name} />
-            </p>
-            <p className="text-primary">
-              <SplitText text={`Email: ${contactsData.email}`} />
-            </p>
-            <p className="text-primary">
-              <SplitText text={`Phone: ${contactsData.phone}`} />
-            </p>
-            <p className="text-primary">
-              <SplitText text={contactsData.address} />
-            </p>
+            <p className="text-primary">{contactsData.name}</p>
+            <p className="text-primary">{`Email: ${contactsData.email}`}</p>
+            <p className="text-primary">{`Phone: ${contactsData.phone}`}</p>
+            <p className="text-primary">{contactsData.address}</p>
           </div>
         </div>
       </div>

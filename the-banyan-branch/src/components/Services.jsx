@@ -2,8 +2,6 @@ import { Heart, Leaf, Sun } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { configurationSelector } from "../redux/selector/selector";
-import SplitText from "./global/SplitText";
-import SpotlightCard from "./global/SpotlightCard";
 
 const Services = ({ sectionRefs }) => {
   const { configurationData } = useSelector(configurationSelector);
@@ -52,16 +50,16 @@ const Services = ({ sectionRefs }) => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services?.map((item, index) => (
-            <SpotlightCard key={index}>
+            <div
+              key={index}
+              className="flex flex-col items-center text-center p-6 bg-tertiary rounded-lg shadow-md"
+            >
               <item.icon className="h-12 w-12 text-primary mb-4" />
               <h3 className="text-xl font-semibold text-primary mb-2">
-                <SplitText text={item.title} />
+                {item.title}
               </h3>
-              <p className="text-secondary">
-                <SplitText text={item.description} />
-              </p>
-            </SpotlightCard>
-            // </div>
+              <p className="text-secondary">{item.description}</p>
+            </div>
           ))}
         </div>
       </div>
