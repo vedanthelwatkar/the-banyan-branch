@@ -28,6 +28,7 @@ app.use((err, req, res, next) => {
     success: false,
     status,
     message,
+    err,
   });
 });
 
