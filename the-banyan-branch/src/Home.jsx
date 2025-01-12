@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, Leaf, Heart, Sun, Calendar } from "lucide-react";
 import Landing from "./components/Landing";
 import About from "./components/About";
 import Services from "./components/Services";

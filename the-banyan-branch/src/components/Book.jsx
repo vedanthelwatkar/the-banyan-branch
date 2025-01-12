@@ -1,12 +1,13 @@
 import { Calendar } from "lucide-react";
 import React from "react";
+import SplitText from "./global/SplitText";
 
 const Book = ({ sectionRefs }) => {
   return (
-    <section ref={sectionRefs.book} className="py-16 bg-tertiary">
+    <section ref={sectionRefs?.book} className="py-16 bg-tertiary">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-semibold text-center text-primary mb-8">
-          Book an Appointment
+          <SplitText text="Book an Appointment" />
         </h2>
         <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
           <form className="space-y-4">
