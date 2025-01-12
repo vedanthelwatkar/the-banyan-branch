@@ -5,6 +5,7 @@ export const appconfig = {
 export const ApiEndPoints = {
   GET_CONSTANTS: "/constants/getConstants",
   GET_PROFILE: "/profile",
+  BOOK: "/book",
   GET_CONFIGURATION: "/configure/allDetails",
 };
 

@@ -14,6 +14,7 @@ export const ApiEndPoints = {
   DELETE_SECTION: "/configure/remove",
   UPDATE_SECTION: "/configure/update",
   GET_ANALYTICS: "/analytics",
+  BOOK: "/book",
 };
 
 export const returnHeader = (

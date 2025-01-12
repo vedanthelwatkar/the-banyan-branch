@@ -1,6 +1,7 @@
 import { Flex, Menu } from "antd";
 import React, { useEffect, useState } from "react";
 import {
+  CalendarOutlined,
   HomeFilled,
   HomeOutlined,
   LineChartOutlined,
@@ -43,6 +44,11 @@ const menuItems = [
     key: "profile",
     label: "Profile",
     icon: <UserOutlined />,
+  },
+  {
+    key: "appointments",
+    label: "Appointments",
+    icon: <CalendarOutlined />,
   },
 ];
 

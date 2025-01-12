@@ -14,3 +14,8 @@ export const contactsSelector = createSelector(
   (state) => state,
   (state) => state.ContactsSlice
 );
+
+export const bookSelector = createSelector(
+  (state) => state,
+  (state) => state.BookSlice
+);

@@ -6,6 +6,7 @@ import { applyTheme } from "./helper/applyTheme";
 import Home from "./Home";
 import { getConfiguration } from "./redux/slice/ConfigurationSlice";
 import { getContacts } from "./redux/slice/ContactsSlice";
+import { getAppointments } from "./redux/slice/BookSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function App() {
     dispatch(getConstants());
     dispatch(getConfiguration());
     dispatch(getContacts());
+    dispatch(getAppointments());
   }, [dispatch]);
 
   useEffect(() => {

@@ -4,6 +4,7 @@ import { configurationSelector } from "../redux/selector/selector";
 import { HoverEffect } from "./ui/card-hover-effect";
 
 import { Heart, Leaf, Sun } from "lucide-react";
+import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 const Services = ({ sectionRefs }) => {
   const { configurationData } = useSelector(configurationSelector);
@@ -47,9 +48,10 @@ const Services = ({ sectionRefs }) => {
   return (
     <section ref={sectionRefs?.services} className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-semibold text-center text-textBase mb-12">
-          Our Services
-        </h2>
+        <TextGenerateEffect
+          words="Our Services"
+          className="text-3xl md:text-4xl font-semibold text-center text-textBase mb-12"
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services?.map((item, index) => (
             <div

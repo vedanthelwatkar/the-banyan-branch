@@ -5,6 +5,7 @@ import ProfileSlice from "../slice/ProfileSlice";
 import ConfigurationSlice from "../slice/ConfigurationSlice";
 import AuthSlice from "../slice/AuthSlice";
 import AnalyticsSlice from "../slice/AnalyticsSlice";
+import BookSlice from "../slice/BookSlice";
 
 export const reducer = {
   GetConstantsSlice: GetConstantsSlice,
@@ -13,6 +14,7 @@ export const reducer = {
   ProfileSlice: ProfileSlice,
   ConfigurationSlice: ConfigurationSlice,
   AnalyticsSlice: AnalyticsSlice,
+  BookSlice: BookSlice,
 };
 
 const rootReducer = combineReducers(reducer);

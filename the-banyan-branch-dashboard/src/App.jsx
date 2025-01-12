@@ -13,6 +13,7 @@ import NotFoundPage from "./pages/NotFoundPage.jsx";
 import WelcomePage from "./pages/WelcomePage.jsx";
 import Signup from "./pages/Signup.jsx";
 import Login from "./pages/Login.jsx";
+import Appointments from "./pages/Appointments.jsx";
 
 function setRootProperty(property, value) {
   if (value) {
@@ -82,6 +83,11 @@ const AppRoutes = () => {
         <Route
           path="profile"
           element={<Profile />}
+          errorElement={<ErrorElement />}
+        />
+        <Route
+          path="appointments"
+          element={<Appointments />}
           errorElement={<ErrorElement />}
         />
       </Route>

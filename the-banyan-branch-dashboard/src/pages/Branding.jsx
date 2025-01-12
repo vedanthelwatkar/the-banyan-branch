@@ -184,7 +184,7 @@ const Branding = () => {
             <iframe
               src="https://the-banyan-branch.vercel.app/"
               title="Website Preview"
-              className="w-full h-[500px] border-0"
+              className="w-full h-[600px] border-0"
             />
           </Card>
         </Flex>
