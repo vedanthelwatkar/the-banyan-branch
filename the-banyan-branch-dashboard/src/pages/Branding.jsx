@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Card,
   Flex,
@@ -9,11 +9,16 @@ import {
   Space,
 } from "antd";
 import CardTitle from "../components/CardTitle";
-import { getBranding, updateBranding } from "../redux/slice/BrandingSlice";
+import {
+  getBranding,
+  resetUpdateBranding,
+  updateBranding,
+} from "../redux/slice/BrandingSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { brandingSelector } from "../redux/selector/selectors";
 import { openNotificationWithIcon } from "../helper";
 import FontPicker from "../components/FontPicker";
+import { ReloadOutlined } from "@ant-design/icons";
 
 const Branding = () => {
   const isMobile = window.screen.width < 768;
@@ -35,8 +40,17 @@ const Branding = () => {
 
   const [api, contextHolder] = notification.useNotification({ maxCount: 1 });
 
+  const iframeRef = useRef(null);
+
+  const handleReload = () => {
+    if (iframeRef.current) {
+      iframeRef.current.src = iframeRef.current.src;
+    }
+  };
+
   const handleSubmit = (values) => {
     dispatch(updateBranding(values));
+    handleReload();
   };
 
   const handleColorChange = (color, field) => {
@@ -93,6 +107,7 @@ const Branding = () => {
   useEffect(() => {
     if (updateBrandingSuccess) {
       openNotificationWithIcon(api, "success", "Branding updated", "Branding");
+      dispatch(resetUpdateBranding());
     }
     if (updateBrandingError) {
       openNotificationWithIcon(
@@ -180,8 +195,21 @@ const Branding = () => {
               </Form.Item>
             </Space>
           </Form>
-          <Card className="flex-1" title="Preview">
+          <Card
+            className="flex-1"
+            title="Preview"
+            extra={
+              <Button
+                icon={<ReloadOutlined />}
+                onClick={handleReload}
+                type="primary"
+              >
+                Reload
+              </Button>
+            }
+          >
             <iframe
+              ref={iframeRef}
               src="https://the-banyan-branch.vercel.app/"
               title="Website Preview"
               className="w-full h-[600px] border-0"
