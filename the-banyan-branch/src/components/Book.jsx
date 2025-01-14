@@ -219,7 +219,7 @@ const Book = ({ sectionRefs }) => {
               className="text-3xl md:text-4xl font-semibold text-center text-textBase mb-8"
             />
             <div className="p-6 rounded-lg">
-              <p className="text-center text-textSecondary mb-4">
+              <p className="text-center text-textSecondary mb-8">
                 {configurationData?.contact &&
                   configurationData?.contact[0]?.description}
               </p>

@@ -57,7 +57,7 @@ const About = ({ sectionRefs }) => {
       <div className="container mx-auto px-4">
         <TextGenerateEffect
           className="text-4xl md:text-5xl font-bold text-center text-primary mb-12"
-          words="About Me"
+          words="About Priya"
         />
         <div className="flex flex-col md:flex-row items-center gap-12">
           <motion.div
