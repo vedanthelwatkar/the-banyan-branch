@@ -19,6 +19,14 @@
 
   * {
     font-family: var(--theme-font);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+
+    &::-webkit-scrollbar {
+      background: transparent; /* Chrome/Safari/Webkit */
+      display: none;
+      width: 0px;
+    }
   }
 }
 

@@ -44,7 +44,12 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ themeState, toggleTheme, themeMode }}>
-      <ConfigProvider theme={{ token: {}, algorithm: themeState }}>
+      <ConfigProvider
+        theme={{
+          token: {},
+          algorithm: themeState,
+        }}
+      >
         {children}
       </ConfigProvider>
     </ThemeContext.Provider>

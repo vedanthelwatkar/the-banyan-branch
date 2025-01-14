@@ -2,15 +2,27 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { configurationSelector } from "../redux/selector/selector";
 import { HoverEffect } from "./ui/card-hover-effect";
+import { Carousel } from "./ui/apple-cards-carousel";
 
-import { Heart, Leaf, Sun } from "lucide-react";
+import {
+  BookHeart,
+  Brain,
+  Heart,
+  Leaf,
+  PersonStanding,
+  Sun,
+} from "lucide-react";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 
 const Services = ({ sectionRefs }) => {
   const { configurationData } = useSelector(configurationSelector);
   const [services, setServices] = useState([]);
 
-  const icons = [Leaf, Heart, Sun];
+  const isMobile = () => {
+    return window && window.innerWidth < 768;
+  };
+
+  const icons = [Leaf, Heart, Sun, Brain, BookHeart, PersonStanding];
 
   useEffect(() => {
     const serviceData = configurationData?.services?.map((item, index) => ({
@@ -23,7 +35,7 @@ const Services = ({ sectionRefs }) => {
 
   if (!configurationData.services) {
     return (
-      <section className="animate-pulse py-16 bg-white">
+      <section className="animate-pulse py-16 bg-gradient-to-b from-tertiary to-background">
         <div className="container mx-auto px-4">
           <div className="h-10 bg-primary rounded w-3/5 mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -46,26 +58,37 @@ const Services = ({ sectionRefs }) => {
   }
 
   return (
-    <section ref={sectionRefs?.services} className="py-16 bg-white">
+    <section
+      ref={sectionRefs?.services}
+      className="py-16 bg-gradient-to-b from-tertiary to-background"
+    >
       <div className="container mx-auto px-4">
         <TextGenerateEffect
           words="Our Services"
-          className="text-3xl md:text-4xl font-semibold text-center text-textBase mb-12"
+          className="text-4xl md:text-4xl font-bold text-center text-primary mb-12"
+          marginBottom={isMobile ? "24px" : "48x"}
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services?.map((item, index) => (
+        <Carousel
+          items={services?.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center text-center p-6 bg-tertiary rounded-lg shadow-md"
+              className="flex flex-col items-center text-center p-6 bg-secondary rounded-lg shadow-md"
+              style={{
+                width: isMobile() ? "50vw" : "25vw",
+                height: isMobile() ? "30vh" : "30vh",
+                gap: isMobile() ? "4px" : "12px",
+              }}
             >
               <item.icon className="h-12 w-12 text-textBase mb-4" />
               <h3 className="text-xl font-semibold text-textBase mb-2">
                 {item.title}
               </h3>
-              <p className="text-textSecondary">{item.description}</p>
+              <p className="text-textSecondary overflow-auto">
+                {item.description}
+              </p>
             </div>
           ))}
-        </div>
+        />
       </div>
     </section>
   );

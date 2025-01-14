@@ -27,7 +27,6 @@ const options = [
   { key: "about", value: "about", label: "About" },
   { key: "services", value: "services", label: "Services" },
   { key: "book", value: "book", label: "Book" },
-  { key: "contact", value: "contact", label: "Contact" },
 ];
 
 const Configure = () => {

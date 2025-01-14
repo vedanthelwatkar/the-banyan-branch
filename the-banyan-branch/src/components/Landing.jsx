@@ -10,7 +10,7 @@ const Landing = ({ sectionRefs, scrollToSection }) => {
 
   if (!configurationData.home)
     return (
-      <section className="pt-24 pb-16 animate-pulse">
+      <section className="py-32 animate-pulse">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
             <div className="flex-1 space-y-6">
@@ -27,7 +27,10 @@ const Landing = ({ sectionRefs, scrollToSection }) => {
     );
 
   return (
-    <section ref={sectionRefs?.home} className="pt-24 pb-16">
+    <section
+      ref={sectionRefs?.home}
+      className="py-32  bg-gradient-to-b from-tertiary to-background"
+    >
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
           <div className="flex-1 space-y-6">
@@ -50,7 +53,7 @@ const Landing = ({ sectionRefs, scrollToSection }) => {
               <ArrowRight className="ml-2 h-5 w-5" />
             </button>
           </div>
-          <div className="flex-1">
+          <div>
             <img
               src={nature}
               alt="Beautiful nature scene"

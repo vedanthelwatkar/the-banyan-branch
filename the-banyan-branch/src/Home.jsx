@@ -3,7 +3,6 @@ import Landing from "./components/Landing";
 import About from "./components/About";
 import Services from "./components/Services";
 import Book from "./components/Book";
-import Contact from "./components/Contact";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,7 +26,6 @@ export default function Home() {
     about: useRef(null),
     services: useRef(null),
     book: useRef(null),
-    contact: useRef(null),
   };
 
   useEffect(() => {
@@ -68,10 +66,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+      <nav className="sticky top-0 left-0 right-0 bg-white shadow-md z-50">
         <div className="container mx-auto px-4">
           <ul className="flex justify-center py-4 px-2" style={{}}>
-            {["Home", "About", "Services", "Book", "Contact"].map((item) => (
+            {["Home", "About", "Services", "Book"].map((item) => (
               <li key={item}>
                 <button
                   className={`text-textBase rounded-md transition-colors ${
@@ -103,8 +101,6 @@ export default function Home() {
       <Services sectionRefs={sectionRefs} />
 
       <Book sectionRefs={sectionRefs} />
-
-      <Contact sectionRefs={sectionRefs} />
     </main>
   );
 }

@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Button, Flex, Layout, Typography } from "antd";
 import "../style/dashboard.css";
 import SideBar from "../pages/SideBar";
-import BanyanTree from "../assets/BanyanTree";
 import { Outlet } from "react-router-dom";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { useTheme } from "./ThemeContext";
+import logo from "../assets/logo.png";
 
 const { Header, Sider, Content } = Layout;
 const { Title } = Typography;
@@ -35,11 +35,7 @@ const DashboardLayout = () => {
         }}
       >
         <Flex className="items-center gap-2">
-          <BanyanTree
-            width={40}
-            height={40}
-            color={isDarkMode ? "#fff" : "#000"}
-          />
+          <img src={logo} width={40} height={40} />
           <Title level={4} style={{ margin: 0 }}>
             The Banyan Branch
           </Title>

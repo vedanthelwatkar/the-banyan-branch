@@ -29,7 +29,7 @@ const Contact = ({ sectionRefs }) => {
     );
 
   return (
-    <section ref={sectionRefs?.contact} className="py-16 bg-white">
+    <section ref={sectionRefs?.contact} className="py-16 bg-inherit">
       <div className="container mx-auto px-4">
         <TextGenerateEffect
           words={
